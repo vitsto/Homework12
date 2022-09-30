@@ -17,7 +17,7 @@ public class Library {
 
     public void showBooks() {
         for (Book book : books) {
-            System.out.println(book.getAuthorName() + ": " + book.getTitle() + ": " + book.getYearPublishing());
+            System.out.println(book);
         }
     }
 
@@ -36,5 +36,15 @@ public class Library {
                 book.setYearPublishing(newYearPublishing);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder("Library:\n");
+
+        for (int i = 0; i < index; i++) {
+            str.append(books[i]).append("\n");
+        }
+        return str.toString();
     }
 }
